@@ -8,7 +8,7 @@ import java.util.Properties;
 
 
 public class JDBCUtil {
-	public static String url1 = "jdbc:jtds:sybase://192.168.68.80:5000;DatabaseName=WSCQ;charset=cp936";
+	public static String url = "jdbc:jtds:sybase://192.168.68.80:5000;DatabaseName=WSCQ;charset=cp936";
 	public static String driver="net.sourceforge.jtds.jdbc.Driver";
 
 	private static int countConn;
@@ -17,7 +17,7 @@ public class JDBCUtil {
 	public  static Connection getConnection() throws Exception{
 		Connection conn = null;
 		Class.forName(driver);
-		conn = DriverManager.getConnection(url1, "sa", "");
+		conn = DriverManager.getConnection(url, "sa", "");
 		
 		return conn;
 	}
