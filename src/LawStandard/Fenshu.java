@@ -4,6 +4,7 @@ package LawStandard;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class Fenshu {
 	public static String ji = "零一二三四五六七八九十百";
 	public static List<String> fen(String[] nums )

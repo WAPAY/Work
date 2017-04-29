@@ -10,6 +10,7 @@ import java.util.Collections;
 import java.util.List;
 
 
+
 //最小编辑距离的算法动态规划实现
 public class EditDistance {
 	private static int cost = 0;
