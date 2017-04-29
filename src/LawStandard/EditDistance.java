@@ -65,8 +65,7 @@ public class EditDistance {
 	public static String standard_law(String source) throws Exception{
 		List<String> law_list=new ArrayList<String>();
 		List<Integer> distance=new ArrayList<Integer>();
-		InputStream is=new FileInputStream("E:/tasks/law_cluster_preparse/standrad_law/规范法条名称.txt");
-		BufferedReader br=new BufferedReader(new InputStreamReader(is,"utf-8"));
+		BufferedReader br=new BufferedReader(new InputStreamReader(new FileInputStream("C:\\Users\\Administrator\\Desktop\\jin\\规范法条名称.txt"),"utf-8"));
 		String line;
 		line = br.readLine();
 		while(line!=null){
@@ -99,7 +98,7 @@ public class EditDistance {
 	
 	public static void main(String[] args) throws Exception {
 
-		String source = "<<中挂人民币婚姻法>>/...../,,,,第三十二条第二款第三十七条第五十五条第一款;中华人民币共和挂婚姻法第三十八条";
+		String source = "道路交通法三十二;中华人民币共和挂婚姻法第三十八条";
 		
 
 		List<String> mylist=whole_laws(source);
