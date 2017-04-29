@@ -1,7 +1,8 @@
 package model;
 
 public class Ayft {
-	private Integer wsid;//文书id
+	private Integer id;//新表ID
+	private Integer wsid;//文书id(旧表ID，用来标识同一文书)
 	private String wsah;//文书案号
 	private String ajlb;//案件类别：民事等
     private Integer aycj;//案由层级 1234等
