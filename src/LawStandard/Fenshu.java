@@ -11,9 +11,16 @@ public class Fenshu {
 	{
 		List<String> result = new ArrayList<>();
 		int i = 0;
+		int j=0;
 		int length = nums.length;
 		while(i < length)    
-		{	//二*****    
+		{	
+			if(j>100){
+				return null;
+			}
+			j++;
+			
+			
 			if(!ji.contains(nums[i]))
 			{
 				i = i+1;
@@ -26,21 +33,21 @@ public class Fenshu {
 					i = i+2;
 					continue;
 				}
-				//二
+				
 				if(i+1 == length)
 				{
 					result.add(nums[i]);
 					break;
 					
 				}
-				//二二
+				//浜屼簩
 				if(i+1 < length && !nums[i+1].equals("百") && !nums[i+1].equals("十") && !nums[i+1].equals("零"))
 				{
 					result.add(nums[i]);
 					i++;
 					continue;
 				}
-				//二十****
+				//浜屽崄****
 				if(i+1 < length && nums[i+1].equals("十"))
 				{
 					if(i+2 < length && nums[i+2].equals("条"))
@@ -49,30 +56,30 @@ public class Fenshu {
 						i = i+3;
 						continue;
 					}
-					//二十
+					//浜屽崄
 					if(i+2 == length)
 					{
 						result.add(nums[i] + nums[i+1]);
 						break;
 					}
-					//二十二****
+					//浜屽崄浜�***
 					if(i+2 < length && !nums[i+2].equals("百") && !nums[i+2].equals("十") && !nums[i+2].equals("零"))
 					{
-						//二十二
+						//浜屽崄浜�
 						if(i+3 == length)
 						{
 							result.add(nums[i]+nums[i+1]+nums[i+2]);
 							break;
 						}
 						
-						//二十二十***||二十二百***
-						if(i+3 < length && (nums[i+3].equals("百") ||nums[i+3].equals("十") ))
+						//浜屽崄浜屽崄***||浜屽崄浜岀櫨***
+						if(i+3 < length && (nums[i+3].equals("百") ||nums[i+3].equals("十")))
 						{
 							result.add(nums[i]+nums[i+1]);
 							i = i+2;
 							continue;
 						}
-						//二十二二****
+						//浜屽崄浜屼簩****
 						if( i+3 < length && !nums[i+3].equals("百") && !nums[i+3].equals("十") && !nums[i+3].equals("零"))
 						{
 							result.add(nums[i]+nums[i+1]+nums[i+2]);
@@ -82,38 +89,38 @@ public class Fenshu {
 					}
 					
 				}
-				//二百*****
+				//浜岀櫨*****
 				if(i+1 < length && nums[i+1].equals("百"))
 				{
-					//二百
+					//浜岀櫨
 					if(i+2 ==length )
 					{
 						result.add(nums[i]+nums[i+1]);
 						break;
 					}
-					//二百十***
+					//浜岀櫨鍗�**
 					if( i+2 < length && nums[i+2].equals("十"))
 					{
 						result.add(nums[i]+nums[i+1]);
 						i = i+2;
 						continue;
 					}
-					//二百零****
+					//浜岀櫨闆�***
 					if(i+2 < length && nums[i+2].equals("零"))
 					{
 						result.add(nums[i]+nums[i+1]+nums[i+2]+nums[i+3]);
 						i = i+4;
 						continue;
 					}
-					//二百二 || 二百二百 || 二百二二
+					//浜岀櫨浜�|| 浜岀櫨浜岀櫨 || 浜岀櫨浜屼簩
 					if(i+2 < length && (i+3 ==length || nums[i+3].equals("百") || (!nums[i+3].equals("百") && !nums[i+3].equals("十") && !nums[i+3].equals("零"))))
 					{
 						result.add(nums[i] + nums[i+1]);
 						i = i+2;
 						continue;
 					}
-					//二百二十****
-					if(i+2<length && i+3 < length && nums[i+3].equals("十") )
+					//浜岀櫨浜屽崄****
+					if(i+2<length && i+3 < length && nums[i+3].equals("十"))
 					{
 						if(i+4 < length && nums[i+4].equals("条"))
 						{
@@ -122,7 +129,7 @@ public class Fenshu {
 							continue;
 						}
 						
-						//二百二十
+						//浜岀櫨浜屽崄
 						if( i+4 == length )
 						{
 							result.add(nums[i]+nums[i+1]+nums[i+2]+nums[i+3]);
@@ -139,7 +146,7 @@ public class Fenshu {
 				}
 				
 			}
-			//十***
+			//鍗�**
 			if(nums[i].equals("十"))
 			{
 				
@@ -154,36 +161,36 @@ public class Fenshu {
 					i = i+2;
 					continue;
 				}
-				//十
+				//鍗�
 				if( i+1 == length)
 				{
 					result.add(nums[i]);
 					break;
 				}
-				//十十****
+				//鍗佸崄****
 				if(i+1 < length && nums[i+1].equals("十"))
 				{
 					result.add(nums[i]);
 					i = i+1;
 					continue;
 				}
-				//十二***
+				//鍗佷簩***
 				if(i+1 < length && !nums[i+1].equals("百") && !nums[i+1].equals("十") && !nums[i+1].equals("零"))
 				{
-					//十二
+					//鍗佷簩
 					if(i+2 == length)
 					{
 						result.add(nums[i] + nums[i+1]);
 						break;
 					}
-					//十二二****
+					//鍗佷簩浜�***
 					if(i+2 < length && !nums[i+2].equals("百") && !nums[i+2].equals("十") && !nums[i+2].equals("零"))
 					{
 						result.add(nums[i] + nums[i+1]);
 						i = i+2;
 						continue;
 					}
-					//十二十****
+					//鍗佷簩鍗�***
 					if(i+2 < length && nums[i+2].equals("十"))
 					{
 						result.add(nums[i] + nums[i+1]);
@@ -197,7 +204,7 @@ public class Fenshu {
 		return result;
 	}
 	public static void main(String[] args) {
-		String[] temp = "中华人民共的还是电脑的三十八条".split("");
+		String[] temp = "零五条第二十条".split("");
 		System.out.println(fen(temp));
 	}
 
