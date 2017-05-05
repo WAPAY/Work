@@ -16,7 +16,15 @@ public class Ayft {
     private String sijaydm;//四级案由代码
     private String flyj;//法律依据(以；隔开)
 	
-    public Integer getWsid() {
+    
+    
+    public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
+	}
+	public Integer getWsid() {
 		return wsid;
 	}
 	public void setWsid(Integer wsid) {

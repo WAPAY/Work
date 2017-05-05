@@ -22,6 +22,7 @@ import jxl.write.WritableSheet;
 import jxl.write.WritableWorkbook;
 import jxl.write.WriteException;
 import jxl.write.biff.RowsExceededException;
+import util.JDBCUtil;
 
 import org.jdom2.Document;
 import org.jdom2.Element;
@@ -30,13 +31,9 @@ import org.jdom2.input.SAXBuilder;
 
 
 public class newSheet {
-	private static String dbDriver="com.sybase.jdbc2.jdbc.SybDriver";
-	private static String sConnStr = "jdbc:sybase:Tds:localhost:5000/WSCQ?useUnicode=true&characterEncoding=utf-8"; 
-    public static void main(String[] args) throws RowsExceededException, WriteException, IOException, SQLException, InstantiationException, IllegalAccessException, ClassNotFoundException{
-//    	String dbDriver="com.mysql.jdbc.Driver";
-//		String sConnStr = "jdbc:mysql://localhost:3306/ws2?useUnicode=true&characterEncoding=utf-8"; 
-		Class.forName(dbDriver).newInstance();
-		Connection connect = DriverManager.getConnection(sConnStr, "sa","");
+	 public static void main(String[] args) throws RowsExceededException, WriteException, IOException, SQLException, InstantiationException, IllegalAccessException, ClassNotFoundException{
+		 
+		Connection connect = JDBCUtil.getConnection();
 		Statement stmt = connect.createStatement();
 		
 		int row = 1;
