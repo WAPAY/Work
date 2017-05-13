@@ -204,7 +204,7 @@ public class Fenshu {
 		return result;
 	}
 	public static void main(String[] args) {
-		String[] temp = "零五条第二十条".split("");
+		String[] temp = "第一二十条".split("");
 		System.out.println(fen(temp));
 	}
 
